@@ -38,6 +38,14 @@ structures/
 *.joblib
 *.h5
 
+# Whitelist: final curated dataset + embeddings (needed for reproducibility)
+!datasets/train_final.fasta
+!datasets/train_final_labels.csv
+!datasets/benchmark_final.fasta
+!datasets/benchmark_final_labels.csv
+!datasets/X_train_embeddings.npy
+!datasets/X_benchmark_embeddings.npy
+
 # Trained model outputs per ablation notebook
 models/
 checkpoints/
