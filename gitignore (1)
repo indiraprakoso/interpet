@@ -1,0 +1,87 @@
+# ============================================================
+# Raw data & curated dataset outputs (large / third-party)
+# ============================================================
+data/*
+!data/README.md
+
+datasets/*.npy
+datasets/*.fasta
+datasets/*.csv
+datasets/*.xlsx
+!datasets/.gitkeep
+
+# Temporary files from CD-HIT & curation steps
+temp_curation/
+*.clstr
+*_for_cdhit.fasta
+*_after_cdhit2d.fasta
+
+# ============================================================
+# 3D structures
+# ============================================================
+*.pdb
+*.cif
+*.mmcif
+structures/
+
+# ============================================================
+# Embeddings / model artifacts / checkpoints
+# ============================================================
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.pkl
+*.joblib
+*.h5
+
+# Trained model outputs per ablation notebook
+models/
+checkpoints/
+results/*.xlsx
+results/*.csv
+!results/.gitkeep
+
+# Cache for HuggingFace / Transformers / torch_geometric (if downloaded locally)
+.cache/
+**/transformers_cache/
+**/torch_geometric_cache/
+
+# ============================================================
+# Jupyter / Python
+# ============================================================
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# ============================================================
+# Google Colab / Google Drive
+# ============================================================
+.config/
+drive/
+
+# ============================================================
+# OS / Editor
+# ============================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
