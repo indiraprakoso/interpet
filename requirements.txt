@@ -1,0 +1,51 @@
+# InterPET pipeline dependencies
+# Covers: 1D_Dataset_Curation, 3D_Dataset_Acquisition, Model1-8, Model_Comparison_All
+#
+# Note: notebooks are built for Google Colab, which already ships with
+# numpy/pandas/matplotlib/scikit-learn/torch preinstalled at compatible
+# versions. Pin versions below only if you need strict reproducibility
+# outside Colab.
+
+# --- Core data & scientific computing ---
+numpy
+pandas
+scikit-learn
+scipy
+
+# --- Bioinformatics ---
+biopython
+
+# --- Deep learning / embeddings ---
+torch
+transformers
+accelerate
+sentencepiece      # required for ProtT5 tokenizer (Model3, Model4)
+einops              # used in 3D_Dataset_Acquisition
+
+# --- Graph neural network (Model7, Model8) ---
+torch_geometric
+
+# --- Gradient boosting (Model1, Model3, Model5) ---
+xgboost
+
+# --- Dimensionality reduction & visualization ---
+umap-learn
+matplotlib
+seaborn
+
+# --- Model interpretability ---
+shap
+
+# --- HTTP requests (3D structure retrieval from RCSB PDB) ---
+requests
+
+# --- Excel I/O (Model results, Model_Comparison_All) ---
+openpyxl
+
+# --- Utilities ---
+tqdm
+
+# --- System dependency (NOT a pip package -- install separately) ---
+# cd-hit / cd-hit-2d, required by 1D_Dataset_Curation_Final.ipynb
+#   Ubuntu/Debian : apt-get install -y cd-hit
+#   conda         : conda install -c bioconda cd-hit
