@@ -2,31 +2,6 @@
 
 This repository contains the notebooks used to curate a PET-degrading enzyme (PETase) classification dataset from four public sources, acquire corresponding 3D structures, and train/compare eight model ablations (1D sequence-based, graph-based, and structure-aware) for predicting PET-degrading activity.
 
-## Repository Structure
-
-```
-.
-├── notebooks/
-│   ├── 1D_Dataset_Curation_Final.ipynb        # Curate training set & benchmark from 4 public sources
-│   ├── 3D_Dataset_Acquisition_Final.ipynb     # Acquire/predict 3D structures per sequence
-│   ├── Model1_ESM2_XGB_Final.ipynb            # 1D, ESM-2 embedding + XGBoost
-│   ├── Model2_ESM2_RF_Final.ipynb             # 1D, ESM-2 embedding + Random Forest
-│   ├── Model3_ProtT5_XGB_Final.ipynb          # 1D, ProtT5 embedding + XGBoost
-│   ├── Model4_ProtT5_RF_Final.ipynb           # 1D, ProtT5 embedding + Random Forest
-│   ├── Model5_AACCTD_XGB_Final.ipynb          # 1D, AAC/CTD handcrafted features + XGBoost
-│   ├── Model6_AACCTD_RF_Final.ipynb           # 1D, AAC/CTD handcrafted features + Random Forest
-│   ├── Model7_Graph1D_Chain_Final.ipynb       # 1D Graph (ESM-2 node feat. + sequence-adjacency edges) + GraphSAGE
-│   ├── Model8_Graph1D3D_Contact_Final.ipynb   # 1D+3D Graph (ESM-2 node feat. + structure contact-map edges) + GraphSAGE
-│   └── Model_Comparison_All.ipynb             # Aggregates results from Model #1-8 into comparison tables/charts
-├── data/
-│   └── README.md                              # Instructions for obtaining raw source data
-├── datasets/                                  # Curated output (not committed if large — see .gitignore)
-├── requirements.txt
-├── .gitignore
-├── LICENSE
-└── README.md
-```
-
 ## Pipeline Overview
 
 1. **`1D_Dataset_Curation_Final.ipynb`** — Aggregates sequences from PlasticDB, PAZy, PlasticEnz, and PED; defines positive (PET-active) and negative (non-PET-active) labels; removes duplicates, label conflicts, and benchmark leakage; filters near-duplicate sequences with CD-HIT-2D; and computes ESM-2 embeddings for class-separation visualization. Outputs `train_final.*` and `benchmark_final.*`.
